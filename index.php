@@ -15,12 +15,12 @@
            $this -> scartoMedio = 8 ;
         }
 
-       protected function getBasketsNumber1kg(){
-            return floor(($this -> quantita -= $this -> quantita * $this -> scartoMedio / 100) / 1);
+       protected function getBasketsNumber($kilo){
+            return floor(($this -> quantita -= $this -> quantita * $this -> scartoMedio / 100) / $kilo);
         }
 
         public function print() {
-            echo "La pesca di varietà " . $this -> varieta . " e di calibro " . $this -> calibro . ", è stoccata in magazzino per la quantità di " . $this -> quantita . "kg." . " Con la seguente partita, considerando lo scarto medio, è possibile realizzare " . $this -> getBasketsNumber1kg() . " cestini da 1kg" . "<br></br>";
+            echo "La pesca di varietà " . $this -> varieta . " e di calibro " . $this -> calibro . ", è stoccata in magazzino per la quantità di " . $this -> quantita . "kg." . " Con la seguente partita, considerando lo scarto medio, è possibile realizzare " . $this -> getBasketsNumber(1) . " cestini da 1kg" . "<br></br>";
         }
 
     }
@@ -33,12 +33,10 @@
             $this -> scartoMedio = 12;
         }
 
-        protected function getBasketsNumber500g(){
-            return floor(($this -> quantita -= $this -> quantita * $this -> scartoMedio / 100) / 0.5);
-        }
+       
 
         public function print() {
-            echo "L'albicocca di varietà " . $this -> varieta . " e di calibro " . $this -> calibro . ", è stoccata in magazzino per la quantità di " . $this -> quantita . "kg." . " Con la seguente partita, considerando lo scarto medio, è possibile realizzare " . $this -> getBasketsNumber1kg() . " cestini da 1kg, oppure " . $this -> getBasketsNumber500g() . " cestini da 500g" . "<br></br>";
+            echo "L'albicocca di varietà " . $this -> varieta . " e di calibro " . $this -> calibro . ", è stoccata in magazzino per la quantità di " . $this -> quantita . "kg." . " Con la seguente partita, considerando lo scarto medio, è possibile realizzare " . $this -> getBasketsNumber(1) . " cestini da 1kg, oppure " . $this -> getBasketsNumber(0.5) . " cestini da 500g" . "<br></br>";
         }
 
     }
@@ -50,12 +48,9 @@
             $this -> scartoMedio = 5 ;
         }
 
-        protected function getBasketsNumber750g(){
-            return floor(($this -> quantita -= $this -> quantita * $this -> scartoMedio / 100) / 0.75);
-        }
 
         public function print() {
-            echo "La susina di varietà " . $this -> varieta . " e di calibro " . $this -> calibro . ", è stoccata in magazzino per la quantità di " . $this -> quantita . "kg." . " Con la seguente partita, considerando lo scarto medio, è possibile realizzare " . $this -> getBasketsNumber1kg() . " cestini da 1kg, oppure " . $this -> getBasketsNumber750g() . " cestini da 750g" . "<br></br>";
+            echo "La susina di varietà " . $this -> varieta . " e di calibro " . $this -> calibro . ", è stoccata in magazzino per la quantità di " . $this -> quantita . "kg." . " Con la seguente partita, considerando lo scarto medio, è possibile realizzare " . $this -> getBasketsNumber(1) . " cestini da 1kg, oppure " . $this -> getBasketsNumber(0.75) . " cestini da 750g" . "<br></br>";
         }
     }
 
